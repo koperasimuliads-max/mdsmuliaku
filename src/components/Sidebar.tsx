@@ -2,34 +2,26 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Sidebar() {
-  const [isOpen, setIsOpen] = useState(typeof window !== 'undefined' ? true : false);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <>
-      {/* Mobile Hamburger Button - only show on mobile */}
-      {!isOpen && (
+      {/* Mobile controls */}
+      <div className="lg:hidden">
         <button 
-          onClick={() => setIsOpen(true)}
-          className="lg:hidden fixed left-4 top-4 z-50 p-2 bg-gray-800 text-white rounded-md hover:bg-gray-700"
+          onClick={() => setIsOpen(!isOpen)}
+          className="fixed left-4 top-4 z-50 p-2 bg-gray-800 text-white rounded-md hover:bg-gray-700"
         >
-          ☰
+          {isOpen ? '☰' : '✕'}
         </button>
-      )}
+      </div>
 
       {/* Sidebar */}
       <aside 
-        className={`w-64 bg-gray-800 text-white min-h-screen p-4 ${isOpen ? 'block' : 'hidden'} lg:block z-50`}
+        className={`w-64 bg-gray-800 text-white min-h-screen p-4 ${isOpen ? 'block' : 'hidden'} lg:block`}
       >
-        <div className="flex justify-between items-center mb-6">
-          <span className="text-2xl font-bold">KSP Mulia</span>
-          {isOpen && (
-            <button 
-              onClick={() => setIsOpen(false)}
-              className="lg:hidden text-white hover:text-gray-300"
-            >
-              ✕
-            </button>
-          )}
+        <div className="mb-6">
+          <span className="text-2xl font-bold block text-center">KSP Mulia</span>
         </div>
         <nav className="space-y-2">
           <Link href="/" className="flex items-center px-3 py-2 rounded-md hover:bg-gray-700 transition-colors">
