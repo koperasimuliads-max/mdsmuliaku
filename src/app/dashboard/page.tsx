@@ -141,7 +141,7 @@ export default function Dashboard() {
                   </div>
                   <div className="flex-1">
                     <p className="font-medium text-gray-800">
-                      Setoran tabungan anggota
+                      Setoran simpanan anggota
                     </p>
                     <p className="text-sm text-gray-500">
                       Kemarin, 15:45

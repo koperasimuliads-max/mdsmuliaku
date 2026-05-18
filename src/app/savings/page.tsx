@@ -235,7 +235,7 @@ export default function Savings() {
           
           {savingsList.length === 0 && filteredSavings.length === 0 && (
             <div className="px-6 py-12 text-center">
-              <p className="text-gray-500">Belum ada data tabungan</p>
+               <p className="text-gray-500">Belum ada data simpanan</p>
               <Link 
                 href="/savings/add" 
                 className="mt-4 inline-block px-5 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
@@ -356,7 +356,7 @@ export default function Savings() {
           
           <div className="px-6 py-4 border-t border-gray-100">
             <p className="text-sm text-gray-500">
-              Menampilkan {filteredSavings.length} dari {savingsList.length} rekening tabungan
+               Menampilkan {filteredSavings.length} dari {savingsList.length} rekening simpanan
             </p>
           </div>
         </div>

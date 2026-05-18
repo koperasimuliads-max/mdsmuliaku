@@ -56,7 +56,7 @@ export default function ReportsAnalytics() {
          {
            id: "4",
             title: "Laporan Simpanan",
-           description: "Analisis saldo tabungan, suku bunga yang dibayarkan, dan likuiditas",
+           description: "Analisis saldo simpanan, suku bunga yang dibayarkan, dan likuiditas",
            icon: "🏦",
            color: "bg-blue-100 text-blue-800",
            link: "/reports/savings"
