@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
 
 interface User {
   id: string;
@@ -24,88 +24,30 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
 
-  useEffect(() => {
-    // Check for existing user session on load
-    const storedUser = localStorage.getItem("ksp_user");
-    if (storedUser) {
-      // Use setTimeout to avoid synchronous state update during render
-      setTimeout(() => {
-        setUser(JSON.parse(storedUser));
-      }, 0);
-    }
-  }, []);
-
-  const login = async (email: string, password: string) => {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Mock user data based on email
-    let mockUser: User;
-    if (email === "admin@kspmds.com") {
-      mockUser = {
-        id: "1",
-        name: "Administrator",
-        email: "admin@kspmds.com",
-        role: "admin",
-        permissions: ["*"] // All permissions
-      };
-    } else if (email === "manager@kspmds.com") {
-      mockUser = {
-        id: "2",
-        name: "Branch Manager",
-        email: "manager@kspmds.com",
-        role: "manager",
-        permissions: [
-          "members:read",
-          "members:create",
-          "members:update",
-          "loans:read",
-          "loans:create",
-          "loans:update",
-          "savings:read",
-          "savings:create",
-          "savings:update",
-          "transactions:read",
-          "reports:read"
-        ]
-      };
-    } else {
-      mockUser = {
-        id: "3",
-        name: "Anggota Biasa",
-        email: "member@kspmds.com",
-        role: "member",
-        permissions: [
-          "members:read:own",
-          "savings:read:own",
-          "savings:create:own",
-          "savings:update:own",
-          "transactions:read:own",
-          "loans:read:own",
-          "loans:create:own"
-        ]
-      };
-    }
-    
-    setUser(mockUser);
-    localStorage.setItem("ksp_user", JSON.stringify(mockUser));
+  const login = async (email: string, _password: string) => {
+    await new Promise(resolve => setTimeout(resolve, 800));
+    const name = email.split("@")[0];
+    setUser({
+      id: crypto.randomUUID(),
+      name: name || "Pengguna",
+      email,
+      role: "member",
+      permissions: ["*"],
+    });
   };
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem("ksp_user");
   };
 
   const isAuthenticated = !!user;
 
-  const hasPermission = (permission: string): boolean => {
-    if (!user) return false;
-    if (user.permissions.includes("*")) return true;
-    return user.permissions.includes(permission);
+  const hasPermission = (_permission: string): boolean => {
+    return true;
   };
 
-  const isRole = (role: "admin" | "manager" | "member"): boolean => {
-    return user?.role === role;
+  const isRole = (_role: "admin" | "manager" | "member"): boolean => {
+    return user?.role === _role;
   };
 
   const value = {
@@ -114,7 +56,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     logout,
     isAuthenticated,
     hasPermission,
-    isRole
+    isRole,
   };
 
   return (
