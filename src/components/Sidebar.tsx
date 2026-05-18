@@ -17,7 +17,7 @@ export default function Sidebar() {
       </button>
 
       {/* Sidebar Backdrop (Mobile) */}
-      {isOpen && typeof window !== 'undefined' && (
+      {typeof window !== 'undefined' && isOpen && (
         <div className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsOpen(false)} />
       )}
 
