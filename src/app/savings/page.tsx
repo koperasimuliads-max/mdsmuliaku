@@ -20,7 +20,7 @@ export default function Savings() {
   const [savingsList, setSavingsList] = useState<Savings[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState<"all" | "wajib" | "sukarela" | "pelajar" | "aktif" | "nonaktif" | "tertutup">("all");
+   const [filter, setFilter] = useState<"all" | "wajib" | "sukarela" | "pelajar" | "pokok" | "sibuhar" | "masadepan" | "hari tua" | "aktif" | "nonaktif" | "tertutup">("all");
 
   useEffect(() => {
     // Simulate fetching savings data
@@ -28,69 +28,117 @@ export default function Savings() {
       setLoading(true);
       await new Promise(resolve => setTimeout(resolve, 1200));
       
-      // Sample data
-      const sampleSavings: Savings[] = [
-        {
-          id: "1",
-          memberName: "Budi Santoso",
-          memberNik: "3201011203900001",
-          accountType: "wajib",
-          balance: 5000000,
-          interestRate: 6,
-          lastTransaction: "2024-05-15",
-          status: "aktif",
-          monthlyDeposit: 200000,
-          totalInterest: 150000
-        },
-        {
-          id: "2",
-          memberName: "Budi Santoso",
-          memberNik: "3201011203900001",
-          accountType: "sukarela",
-          balance: 12500000,
-          interestRate: 5,
-          lastTransaction: "2024-05-10",
-          status: "aktif",
-          monthlyDeposit: 500000,
-          totalInterest: 375000
-        },
-        {
-          id: "3",
-          memberName: "Siti Rahayu",
-          memberNik: "3201014506910002",
-          accountType: "wajib",
-          balance: 3000000,
-          interestRate: 6,
-          lastTransaction: "2024-05-12",
-          status: "aktif",
-          monthlyDeposit: 150000,
-          totalInterest: 90000
-        },
-        {
-          id: "4",
-          memberName: "Siti Rahayu",
-          memberNik: "3201014506910002",
-          accountType: "pelajar",
-          balance: 2000000,
-          interestRate: 4,
-          lastTransaction: "2024-05-08",
-          status: "aktif",
-          monthlyDeposit: 100000,
-          totalInterest: 40000
-        },
-        {
-          id: "5",
-          memberName: "Ahmad Fauzi",
-          memberNik: "3201017809920003",
-          accountType: "wajib",
-          balance: 0,
-          interestRate: 6,
-          lastTransaction: "2024-01-20",
-          status: "nonaktif",
-          monthlyDeposit: 0,
-          totalInterest: 0
-        }
-      ];
+       // Sample data
+       const sampleSavings: Savings[] = [
+         {
+           id: "1",
+           memberName: "Budi Santoso",
+           memberNik: "3201011203900001",
+           accountType: "wajib",
+           balance: 5000000,
+           interestRate: 6,
+           lastTransaction: "2024-05-15",
+           status: "aktif",
+           monthlyDeposit: 200000,
+           totalInterest: 150000
+         },
+         {
+           id: "2",
+           memberName: "Budi Santoso",
+           memberNik: "3201011203900001",
+           accountType: "sukarela",
+           balance: 12500000,
+           interestRate: 5,
+           lastTransaction: "2024-05-10",
+           status: "aktif",
+           monthlyDeposit: 500000,
+           totalInterest: 375000
+         },
+         {
+           id: "3",
+           memberName: "Siti Rahayu",
+           memberNik: "3201014506910002",
+           accountType: "wajib",
+           balance: 3000000,
+           interestRate: 6,
+           lastTransaction: "2024-05-12",
+           status: "aktif",
+           monthlyDeposit: 150000,
+           totalInterest: 90000
+         },
+         {
+           id: "4",
+           memberName: "Siti Rahayu",
+           memberNik: "3201014506910002",
+           accountType: "pelajar",
+           balance: 2000000,
+           interestRate: 4,
+           lastTransaction: "2024-05-08",
+           status: "aktif",
+           monthlyDeposit: 100000,
+           totalInterest: 40000
+         },
+         {
+           id: "5",
+           memberName: "Ahmad Fauzi",
+           memberNik: "3201017809920003",
+           accountType: "pokok",
+           balance: 1000000,
+           interestRate: 5,
+           lastTransaction: "2024-05-05",
+           status: "aktif",
+           monthlyDeposit: 50000,
+           totalInterest: 25000
+         },
+         {
+           id: "6",
+           memberName: "Ahmad Fauzi",
+           memberNik: "3201017809920003",
+           accountType: "sibuhar",
+           balance: 500000,
+           interestRate: 8,
+           lastTransaction: "2024-05-03",
+           status: "aktif",
+           monthlyDeposit: 100000,
+           totalInterest: 20000
+         },
+         {
+           id: "7",
+           memberName: "Siti Rahayu",
+           memberNik: "3201014506910002",
+           accountType: "masadepan",
+           balance: 8000000,
+           interestRate: 7,
+           lastTransaction: "2024-05-01",
+           status: "aktif",
+           monthlyDeposit: 300000,
+           totalInterest: 240000
+         },
+         {
+           id: "8",
+           memberName: "Budi Santoso",
+           memberNik: "3201011203900001",
+           accountType: "hari tua",
+           balance: 15000000,
+           interestRate: 6,
+           lastTransaction: "2024-04-30",
+           status: "aktif",
+           monthlyDeposit: 800000,
+           totalInterest: 450000
+         },
+         {
+           id: "9",
+           memberName: "Ahmad Fauzi",
+           memberNik: "3201017809920003",
+           accountType: "wajib",
+           balance: 0,
+           interestRate: 6,
+           lastTransaction: "2024-01-20",
+           status: "nonaktif",
+           monthlyDeposit: 0,
+           totalInterest: 0
+         }
+       ];
       
       setSavingsList(sampleSavings);
       setLoading(false);
@@ -103,11 +151,15 @@ export default function Savings() {
     const matchesSearch = saving.memberName.toLowerCase().includes(search.toLowerCase()) ||
                          saving.memberNik.includes(search);
     
-    const matchesAccountType = 
-      filter === "all" || 
-      filter === "wajib" && saving.accountType === "wajib" ||
-      filter === "sukarela" && saving.accountType === "sukarela" ||
-      filter === "pelajar" && saving.accountType === "pelajar";
+     const matchesAccountType = 
+       filter === "all" || 
+       filter === "wajib" && saving.accountType === "wajib" ||
+       filter === "sukarela" && saving.accountType === "sukarela" ||
+       filter === "pelajar" && saving.accountType === "pelajar" ||
+       filter === "pokok" && saving.accountType === "pokok" ||
+       filter === "sibuhar" && saving.accountType === "sibuhar" ||
+       filter === "masadepan" && saving.accountType === "masadepan" ||
+       filter === "hari tua" && saving.accountType === "hari tua";
     
     const matchesStatus = 
       filter === "all" || 
