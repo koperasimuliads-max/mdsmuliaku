@@ -7,7 +7,7 @@ interface Savings {
   id: string;
   memberName: string;
   memberNik: string;
-  accountType: "wajib" | "sukarela" | "pelajar" | "pokok" | "sibuhar" | "masadepan" | "hari tua";
+  accountType: "wajib" | "pokok" | "sibuhar" | "masadepan" | "hari tua";
   balance: number;
   interestRate: number; // annual
   lastTransaction: string;
@@ -20,7 +20,7 @@ export default function Savings() {
   const [savingsList, setSavingsList] = useState<Savings[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
-   const [filter, setFilter] = useState<"all" | "wajib" | "sukarela" | "pelajar" | "pokok" | "sibuhar" | "masadepan" | "hari tua" | "aktif" | "nonaktif" | "tertutup">("all");
+   const [filter, setFilter] = useState<"all" | "wajib" | "pokok" | "sibuhar" | "masadepan" | "hari tua" | "aktif" | "nonaktif" | "tertutup">("all");
 
   useEffect(() => {
     // Simulate fetching savings data
