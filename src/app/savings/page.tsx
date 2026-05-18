@@ -28,117 +28,93 @@ export default function Savings() {
       setLoading(true);
       await new Promise(resolve => setTimeout(resolve, 1200));
       
-       // Sample data
-       const sampleSavings: Savings[] = [
-         {
-           id: "1",
-           memberName: "Budi Santoso",
-           memberNik: "3201011203900001",
-           accountType: "wajib",
-           balance: 5000000,
-           interestRate: 6,
-           lastTransaction: "2024-05-15",
-           status: "aktif",
-           monthlyDeposit: 200000,
-           totalInterest: 150000
-         },
-         {
-           id: "2",
-           memberName: "Budi Santoso",
-           memberNik: "3201011203900001",
-           accountType: "sukarela",
-           balance: 12500000,
-           interestRate: 5,
-           lastTransaction: "2024-05-10",
-           status: "aktif",
-           monthlyDeposit: 500000,
-           totalInterest: 375000
-         },
-         {
-           id: "3",
-           memberName: "Siti Rahayu",
-           memberNik: "3201014506910002",
-           accountType: "wajib",
-           balance: 3000000,
-           interestRate: 6,
-           lastTransaction: "2024-05-12",
-           status: "aktif",
-           monthlyDeposit: 150000,
-           totalInterest: 90000
-         },
-         {
-           id: "4",
-           memberName: "Siti Rahayu",
-           memberNik: "3201014506910002",
-           accountType: "pelajar",
-           balance: 2000000,
-           interestRate: 4,
-           lastTransaction: "2024-05-08",
-           status: "aktif",
-           monthlyDeposit: 100000,
-           totalInterest: 40000
-         },
-         {
-           id: "5",
-           memberName: "Ahmad Fauzi",
-           memberNik: "3201017809920003",
-           accountType: "pokok",
-           balance: 1000000,
-           interestRate: 5,
-           lastTransaction: "2024-05-05",
-           status: "aktif",
-           monthlyDeposit: 50000,
-           totalInterest: 25000
-         },
-         {
-           id: "6",
-           memberName: "Ahmad Fauzi",
-           memberNik: "3201017809920003",
-           accountType: "sibuhar",
-           balance: 500000,
-           interestRate: 8,
-           lastTransaction: "2024-05-03",
-           status: "aktif",
-           monthlyDeposit: 100000,
-           totalInterest: 20000
-         },
-         {
-           id: "7",
-           memberName: "Siti Rahayu",
-           memberNik: "3201014506910002",
-           accountType: "masadepan",
-           balance: 8000000,
-           interestRate: 7,
-           lastTransaction: "2024-05-01",
-           status: "aktif",
-           monthlyDeposit: 300000,
-           totalInterest: 240000
-         },
-         {
-           id: "8",
-           memberName: "Budi Santoso",
-           memberNik: "3201011203900001",
-           accountType: "hari tua",
-           balance: 15000000,
-           interestRate: 6,
-           lastTransaction: "2024-04-30",
-           status: "aktif",
-           monthlyDeposit: 800000,
-           totalInterest: 450000
-         },
-         {
-           id: "9",
-           memberName: "Ahmad Fauzi",
-           memberNik: "3201017809920003",
-           accountType: "wajib",
-           balance: 0,
-           interestRate: 6,
-           lastTransaction: "2024-01-20",
-           status: "nonaktif",
-           monthlyDeposit: 0,
-           totalInterest: 0
-         }
-       ];
+        // Sample data
+        const sampleSavings: Savings[] = [
+          {
+            id: "1",
+            memberName: "Budi Santoso",
+            memberNik: "3201011203900001",
+            accountType: "wajib",
+            balance: 5000000,
+            interestRate: 6,
+            lastTransaction: "2024-05-15",
+            status: "aktif",
+            monthlyDeposit: 200000,
+            totalInterest: 150000
+          },
+          {
+            id: "2",
+            memberName: "Budi Santoso",
+            memberNik: "3201011203900001",
+            accountType: "wajib",
+            balance: 3000000,
+            interestRate: 6,
+            lastTransaction: "2024-05-12",
+            status: "aktif",
+            monthlyDeposit: 150000,
+            totalInterest: 90000
+          },
+          {
+            id: "3",
+            memberName: "Ahmad Fauzi",
+            memberNik: "3201017809920003",
+            accountType: "pokok",
+            balance: 1000000,
+            interestRate: 5,
+            lastTransaction: "2024-05-05",
+            status: "aktif",
+            monthlyDeposit: 50000,
+            totalInterest: 25000
+          },
+          {
+            id: "4",
+            memberName: "Ahmad Fauzi",
+            memberNik: "3201017809920003",
+            accountType: "sibuhar",
+            balance: 500000,
+            interestRate: 8,
+            lastTransaction: "2024-05-03",
+            status: "aktif",
+            monthlyDeposit: 100000,
+            totalInterest: 20000
+          },
+          {
+            id: "5",
+            memberName: "Siti Rahayu",
+            memberNik: "3201014506910002",
+            accountType: "masadepan",
+            balance: 8000000,
+            interestRate: 7,
+            lastTransaction: "2024-05-01",
+            status: "aktif",
+            monthlyDeposit: 300000,
+            totalInterest: 240000
+          },
+          {
+            id: "6",
+            memberName: "Budi Santoso",
+            memberNik: "3201011203900001",
+            accountType: "hari tua",
+            balance: 15000000,
+            interestRate: 6,
+            lastTransaction: "2024-04-30",
+            status: "aktif",
+            monthlyDeposit: 800000,
+            totalInterest: 450000
+          },
+          {
+            id: "7",
+            memberName: "Ahmad Fauzi",
+            memberNik: "3201017809920003",
+            accountType: "wajib",
+            balance: 0,
+            interestRate: 6,
+            lastTransaction: "2024-01-20",
+            status: "nonaktif",
+            monthlyDeposit: 0,
+            totalInterest: 0
+          }
+        ];
       
       setSavingsList(sampleSavings);
       setLoading(false);
