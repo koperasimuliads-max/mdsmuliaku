@@ -14,9 +14,14 @@ export default function Sidebar() {
         ☰
       </button>
 
+      {/* Sidebar Backdrop (Mobile) */}
+      {isOpen && typeof window !== 'undefined' && (
+        <div className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsOpen(false)} />
+      )}
+
       {/* Sidebar */}
       <aside 
-        className={`w-64 bg-gray-800 text-white min-h-screen p-4 ${isOpen ? 'block' : 'hidden'} lg:block`}
+        className={`w-64 bg-gray-800 text-white min-h-screen p-4 ${isOpen ? 'block lg:block' : 'hidden'} z-50`}
       >
         <div className="flex justify-between items-center mb-6">
           <span className="text-2xl font-bold">KSP Mulia</span>
