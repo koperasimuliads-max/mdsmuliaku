@@ -1,24 +1,19 @@
-"use client";
-
 import Link from "next/link";
 import { useState } from "react";
 
 export default function Sidebar() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(typeof window !== 'undefined' ? true : false);
 
   return (
     <>
-      {/* Mobile Hamburger Button */}
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden fixed left-4 top-4 z-50 p-2 bg-gray-800 text-white rounded-md hover:bg-gray-700"
-      >
-        ☰
-      </button>
-
-      {/* Sidebar Backdrop (Mobile) */}
-      {typeof window !== 'undefined' && isOpen && (
-        <div className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsOpen(false)} />
+      {/* Mobile Hamburger Button - only show on mobile */}
+      {!isOpen && (
+        <button 
+          onClick={() => setIsOpen(true)}
+          className="lg:hidden fixed left-4 top-4 z-50 p-2 bg-gray-800 text-white rounded-md hover:bg-gray-700"
+        >
+          ☰
+        </button>
       )}
 
       {/* Sidebar */}
@@ -27,10 +22,10 @@ export default function Sidebar() {
       >
         <div className="flex justify-between items-center mb-6">
           <span className="text-2xl font-bold">KSP Mulia</span>
-          {!isOpen && (
+          {isOpen && (
             <button 
-              onClick={() => setIsOpen(true)}
-              className="text-white hover:text-gray-300"
+              onClick={() => setIsOpen(false)}
+              className="lg:hidden text-white hover:text-gray-300"
             >
               ✕
             </button>
