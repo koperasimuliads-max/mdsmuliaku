@@ -138,9 +138,11 @@ export default function Savings() {
 
   const getAccountTypeLabel = (type: Savings["accountType"]): string => {
     switch (type) {
-      case "wajib": return "Tabungan Wajib";
-      case "sukarela": return "Tabungan Sukarela";
-      case "pelajar": return "Tabungan Pelajar";
+       case "wajib": return "Simpanan Wajib";
+
+       case "sukarela": return "Simpanan Sukarela";
+
+       case "pelajar": return "Simpanan Pelajar";
       default: return type;
     }
   };
@@ -176,7 +178,7 @@ export default function Savings() {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-3xl font-bold text-indigo-800">
-            Manajemen Tabungan
+             Manajemen Simpanan
           </h1>
           <div className="flex items-center space-x-3">
             <Link 
@@ -184,7 +186,7 @@ export default function Savings() {
               className="px-5 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors flex items-center space-x-2"
             >
               <span className="text-lg">+</span>
-              Buka Tabungan Baru
+               Buka Simpanan Baru
             </Link>
           </div>
         </div>
@@ -216,10 +218,13 @@ export default function Savings() {
                   onChange={(e) => setFilter(e.target.value as any)}
                   className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                 >
-                  <option value="all">Semua Jenis Tabungan</option>
-                  <option value="wajib">Tabungan Wajib</option>
-                  <option value="sukarela">Tabungan Sukarela</option>
-                  <option value="pelajar">Tabungan Pelajar</option>
+                   <option value="all">Semua Jenis Simpanan</option>
+
+                   <option value="wajib">Simpanan Wajib</option>
+
+                   <option value="sukarela">Simpanan Sukarela</option>
+
+                   <option value="pelajar">Simpanan Pelajar</option>
                   <option value="aktif">Status Aktif</option>
                   <option value="nonaktif">Status Nonaktif</option>
                   <option value="tertutup">Status Tertutup</option>
@@ -235,7 +240,7 @@ export default function Savings() {
                 href="/savings/add" 
                 className="mt-4 inline-block px-5 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
               >
-                Buka Tabungan Pertama
+                 Buka Simpanan Pertama
               </Link>
             </div>
           )}
@@ -252,7 +257,7 @@ export default function Savings() {
                       NIK
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Jenis Tabungan
+                       Jenis Simpanan
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Saldo
@@ -360,14 +365,14 @@ export default function Savings() {
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="px-6 py-4 border-b border-gray-100">
               <h2 className="text-xl font-semibold text-gray-800">
-                Ringkasan Tabungan
+                 Ringkasan Simpanan
               </h2>
             </div>
             <div className="grid grid-cols-1 gap-6 px-6 py-4">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="bg-emerald-50 p-4 rounded-xl">
                   <h3 className="text-lg font-medium text-emerald-800 mb-2">
-                    Total Tabungan Wajib
+                     Total Simpanan Wajib
                   </h3>
                   <p className="text-2xl font-bold text-gray-900">
                     {formatCurrency(
@@ -379,7 +384,7 @@ export default function Savings() {
                 </div>
                 <div className="bg-blue-50 p-4 rounded-xl">
                   <h3 className="text-lg font-medium text-blue-800 mb-2">
-                    Total Tabungan Sukarela
+                     Total Simpanan Sukarela
                   </h3>
                   <p className="text-2xl font-bold text-gray-900">
                     {formatCurrency(
@@ -391,7 +396,7 @@ export default function Savings() {
                 </div>
                 <div className="bg-indigo-50 p-4 rounded-xl">
                   <h3 className="text-lg font-medium text-indigo-800 mb-2">
-                    Total Tabungan Pelajar
+                     Total Simpanan Pelajar
                   </h3>
                   <p className="text-2xl font-bold text-gray-900">
                     {formatCurrency(

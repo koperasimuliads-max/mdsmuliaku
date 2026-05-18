@@ -40,7 +40,7 @@ export default function Dashboard() {
           color: "bg-emerald-100 text-emerald-800"
         },
         {
-          title: "Total Tabungan",
+           title: "Total Simpanan",
           value: "Rp 1,2 T",
           icon: () => <span className="text-xl">🏦</span>,
           trend: "up",

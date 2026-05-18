@@ -39,7 +39,7 @@ export default function TransactionHistory() {
           memberNik: "3201011203900001",
           reference: "SET/20240518/001",
           status: "completed",
-          description: "Setoran tabungan wajib"
+           description: "Setoran simpanan wajib"
         },
         {
           id: "2",
@@ -72,7 +72,7 @@ export default function TransactionHistory() {
           memberNik: "3201011203900001",
           reference: "BG/20240515/001",
           status: "completed",
-          description: "Bunga tabungan sukarela April 2024"
+           description: "Bunga simpanan sukarela April 2024"
         },
         {
           id: "5",
@@ -83,7 +83,7 @@ export default function TransactionHistory() {
           memberNik: "3201014506910002",
           reference: "PNR/20240514/001",
           status: "completed",
-          description: "Penarikan tabungan sukarela"
+           description: "Penarikan simpanan sukarela"
         },
         {
           id: "6",
@@ -129,8 +129,8 @@ export default function TransactionHistory() {
 
   const getTransactionTypeLabel = (type: Transaction["type"]): string => {
     switch (type) {
-      case "setoran": return "Setoran Tabungan";
-      case "penarikan": return "Penarikan Tabungan";
+       case "setoran": return "Setoran Simpanan";
+       case "penarikan": return "Penarikan Simpanan";
       case "pembayaran_pinjam": return "Pembayaran Pinjaman";
       case "pencairan_pinjam": return "Pencairan Pinjaman";
       case "bunga": return "Penerimaan Bunga";
@@ -237,8 +237,8 @@ export default function TransactionHistory() {
                   className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                 >
                   <option value="all">Semua Jenis Transaksi</option>
-                  <option value="setoran">Setoran Tabungan</option>
-                  <option value="penarikan">Penarikan Tabungan</option>
+                   <option value="setoran">Setoran Simpanan</option>
+                   <option value="penarikan">Penarikan Simpanan</option>
                   <option value="pembayaran_pinjam">Pembayaran Pinjaman</option>
                   <option value="pencairan_pinjam">Pencairan Pinjaman</option>
                   <option value="bunga">Penerimaan Bunga</option>
