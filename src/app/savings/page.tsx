@@ -130,8 +130,6 @@ export default function Savings() {
      const matchesAccountType = 
        filter === "all" || 
        filter === "wajib" && saving.accountType === "wajib" ||
-       filter === "sukarela" && saving.accountType === "sukarela" ||
-       filter === "pelajar" && saving.accountType === "pelajar" ||
        filter === "pokok" && saving.accountType === "pokok" ||
        filter === "sibuhar" && saving.accountType === "sibuhar" ||
        filter === "masadepan" && saving.accountType === "masadepan" ||
@@ -164,25 +162,27 @@ export default function Savings() {
     }).format(amount);
   };
 
-  const getAccountTypeLabel = (type: Savings["accountType"]): string => {
-    switch (type) {
-       case "wajib": return "Simpanan Wajib";
+   const getAccountTypeLabel = (type: Savings["accountType"]): string => {
+     switch (type) {
+        case "wajib": return "Simpanan Wajib";
+        case "pokok": return "Simpanan Pokok";
+        case "sibuhar": return "Simpanan Bunga Harian (Sibuhar)";
+        case "masadepan": return "Simpanan Masa Depan";
+        case "hari tua": return "Simpanan Hari Tua";
+        default: return type;
+     }
+   };
 
-       case "sukarela": return "Simpanan Sukarela";
-
-       case "pelajar": return "Simpanan Pelajar";
-      default: return type;
-    }
-  };
-
-  const getAccountTypeIcon = (type: Savings["accountType"]): string => {
-    switch (type) {
-      case "wajib": return "💳";
-      case "sukarela": return "💰";
-      case "pelajar": return "🎓";
-      default: return "💳";
-    }
-  };
+   const getAccountTypeIcon = (type: Savings["accountType"]): string => {
+     switch (type) {
+       case "wajib": return "💳";
+       case "pokok": return "🪙";
+       case "sibuhar": return "🔥";
+       case "masadepan": return "📅";
+       case "hari tua": return "👴";
+       default: return "💳";
+     }
+   };
 
   const getStatusBadgeClass = (status: Savings["status"]): string => {
     switch (status) {
