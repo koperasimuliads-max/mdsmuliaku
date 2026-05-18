@@ -7,7 +7,7 @@ interface Savings {
   id: string;
   memberName: string;
   memberNik: string;
-  accountType: "wajib" | "sukarela" | "pelajar";
+  accountType: "wajib" | "sukarela" | "pelajar" | "pokok" | "sibuhar" | "masadepan" | "hari tua";
   balance: number;
   interestRate: number; // annual
   lastTransaction: string;
