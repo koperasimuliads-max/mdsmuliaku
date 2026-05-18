@@ -23,7 +23,7 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <aside 
-        className={`w-64 bg-gray-800 text-white min-h-screen p-4 ${isOpen ? 'block lg:block' : 'hidden'} z-50`}
+        className={`w-64 bg-gray-800 text-white min-h-screen p-4 ${isOpen ? 'block' : 'hidden'} lg:block z-50`}
       >
         <div className="flex justify-between items-center mb-6">
           <span className="text-2xl font-bold">KSP Mulia</span>
